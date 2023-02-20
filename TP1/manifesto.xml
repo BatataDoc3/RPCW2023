@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifesto>
+    <meta>
+        <título>TPC 1</título>
+        <data>2023-02-19</data>
+        <autor>
+            <nome>Jorge Miguel Silva Melo</nome>
+            <id>PG50507</id>
+            <gitlink>https://github.com/BatataDoc3/RPCW2023</gitlink>
+        </autor>
+        <uc>Representação e Processamento de Conhecimento na Web(RPCW)</uc>
+    </meta>
+    <resumo>
+        <p>Para o primeiro TPC foi solicitado 2 coisas</p>
+        <p>1. Acabar o exercício de processamento de cidades, adicionando as ligações que uma cidade tinha com as outras (com um link para as mesmas) e com a distânvcia entre as 2 cidades</p>
+        <p>2. Fazer uma <i>webpage</i> sobre um dos seguintes temas começados por "H": "Hipopotamos", "Holofote", "Hungria" ou "Henriqueta", tendo sido escolhido o "Hipopotamos"</p>
+    </resumo>
+    <resultados>
+        <resultado path="gerahtml.py"> programa que gera o html das cidades</resultado>
+        <resultado path="template.html"> <i>Webpage</i> das cidades</resultado>
+        <resultado path="hipopotamo.py"> <i>Webpage</i> com informação de hipopotamo</resultado>
+    </resultados>
+
+</manifesto>
