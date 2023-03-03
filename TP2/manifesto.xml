@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifesto>
+    <meta>
+        <título>TPC 1</título>
+        <data>2023-02-19</data>
+        <autor>
+            <nome>Jorge Miguel Silva Melo</nome>
+            <id>PG50507</id>
+            <gitlink>https://github.com/BatataDoc3/RPCW2023</gitlink>
+        </autor>
+        <uc>Representação e Processamento de Conhecimento na Web(RPCW)</uc>
+    </meta>
+    <resumo>
+        <p>Para o segundo TPC foram solicitadas 4 tarefas, sendo apenas 2 delas obrigatórias</p>
+        <p>1. Dividir o ficheiro <b>arq.xml</b> em vários componentes utilizando o <i>BeautifulSoup</i> de <i>Python</i> (makeXML.py) </p>
+        <p>2. Fazer um servidor que sirva os registos: O pedido foi mudado comparativamente ao enunciado dado para suportar XML e HTML no mesmo servidor, ficando: </p>
+        <p>2.1 localhost:porta/XML/1 (para o arq1.xml)</p>
+        <p>2.2 localhost:porta/HTML/1 (para o html1.xml)</p>
+        <p>3. Criar a página "index.html" para ser servida quando alguém pede: "localhost:porta/" (index.py)</p>
+        <p>4. Converter os arqx.xml em arqx.html, usando o BeautifulSoup ou outro e servir os registos em HTML. Ao invés disto criei uma função diferente para ser possível ter os 2 tipos de ficheiro. </p>
+    </resumo>
+    <resultados>
+        <resultado path="makeXML.py"> programa que gera os ficheiros <b>XML</b></resultado>
+        <resultado path="makeHTML.py"> programa que gera os ficheiros <b>HTML</b></resultado>
+        <resultado path="index.py"> programa que gera o índice</resultado>
+        <resultado path="server.js"> servidor que processa pedidos</resultado>
+        
+    </resultados>
+
+</manifesto>
