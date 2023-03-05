@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifesto>
+    <meta>
+        <título>TPC 3</título>
+        <data>2023-02-19</data>
+        <autor>
+            <nome>Jorge Miguel Silva Melo</nome>
+            <id>PG50507</id>
+            <gitlink>https://github.com/BatataDoc3/RPCW2023</gitlink>
+        </autor>
+        <uc>Representação e Processamento de Conhecimento na Web(RPCW)</uc>
+    </meta>
+    <resumo>
+        <p>O terceiro TPC consistia na criação dum serviço de consulta sobre o dataset de pessoas, com um conjunto de operações disponíveis:</p>
+        <p>Listar as pessoas: apresenta uma lista de indivíduos numa tabela exibindo os campos id, nome, idade, sexo e cidade  </p>
+        <p>Ao clicar numa linha da tabela o sistema deverá responder com uma página HTML com toda a informação da pessoa </p>
+        <p>Distribuição por desporto: o sistema deverá responder com uma página onde se possa consultar o número de pessoas que pratica cada um dos desportos (esta lista deverá estar ordenada descendentemente) e aceder à lista dessas pessoas</p>
+        <p>Top10 de profissões: o sistema deverá responder com uma página onde se possa consultar as 10 profissões mais exercidas e aceder à lista de pessoas de cada uma das profissões </p>
+    </resumo>
+    <resultados>
+        <resultado path="server.js"> servidor que processa pedidos</resultado>
+        
+    </resultados>
+
+</manifesto>
