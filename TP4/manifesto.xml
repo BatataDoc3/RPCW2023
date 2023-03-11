@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifesto>
+    <meta>
+        <título>TPC 3</título>
+        <data>2023-02-19</data>
+        <autor>
+            <nome>Jorge Miguel Silva Melo</nome>
+            <id>PG50507</id>
+            <gitlink>https://github.com/BatataDoc3/RPCW2023</gitlink>
+        </autor>
+        <uc>Representação e Processamento de Conhecimento na Web(RPCW)</uc>
+    </meta>
+    <resumo>
+        <p>O quarto TPC consistia na criação de uma toDo list, tudo na mesma página, com as seguintes características:</p>
+        <p>Submeter uma nova tarefa com o nome da tarefa, a data, quem a faz e a descrição da tarefa</p>
+        <p>Lista de tarefas pendentes com a informação da tarefa, onde é possível remover ou mover essa tarefa para a lista das tarefas feitas</p>
+        <p>Lista de tarefas feitas, onde também é possível eliminar tarefas</p>
+    </resumo>
+    <resultados>
+        <resultado path="ToDoList/toDo.js"> servidor que processa pedidos</resultado>
+        <resultado path="ToDoList/aux.js"> ficheiro com o conteúdo HTML</resultado>
+        <resultado path="ToDoList/tasks.json"> ficherio json com as listas pendentes e feitas (correr com o json-server)</resultado>
+        
+    </resultados>
+
+</manifesto>

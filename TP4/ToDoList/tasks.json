@@ -1,0 +1,27 @@
+{
+  "pending_tasks": [
+    {
+      "task": "Limpar o carro",
+      "date": "2023-03-24",
+      "person": "João",
+      "description": "Limpar o carro",
+      "id": 1
+    }
+  ],
+  "done_tasks": [
+    {
+      "id": 0,
+      "task": "fsdf",
+      "date": "2023-03-17",
+      "person": "fsdf",
+      "description": "dfssd"
+    },
+    {
+      "task": "Limpar a casa",
+      "date": "2023-03-30",
+      "person": "Eu",
+      "description": "Limpar bem a casa",
+      "id": 2
+    }
+  ]
+}

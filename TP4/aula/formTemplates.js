@@ -41,6 +41,8 @@ exports.personForm = function(d){
                 </footer>
             
             </div>
+        </body>
+    </html>
             `
     return pagHTML
 }
