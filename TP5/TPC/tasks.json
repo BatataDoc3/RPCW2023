@@ -1,0 +1,34 @@
+{
+  "pending_tasks": [
+    {
+      "task": "Cozinhar",
+      "date": "2023-03-24",
+      "person": "Mãe",
+      "description": "Cozinhar",
+      "id": 0
+    },
+    {
+      "task": "Pôr a mesa",
+      "date": "2023-03-24",
+      "person": "Joana",
+      "description": "Pôr a mesa",
+      "id": 2
+    }
+  ],
+  "done_tasks": [
+    {
+      "task": "Limpar a casa",
+      "date": "2023-03-30",
+      "person": "Eu",
+      "description": "Limpar bem a casa",
+      "id": 2
+    },
+    {
+      "task": "Limpar o carro",
+      "date": "2023-03-24",
+      "person": "João",
+      "description": "Limpar o carro",
+      "id": 3
+    }
+  ]
+}

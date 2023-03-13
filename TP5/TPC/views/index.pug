@@ -1,0 +1,76 @@
+extends layout
+
+block content
+  .w3-card-4
+    header.w3-container.w3-teal
+      h2 Add Task
+    form.w3-container(method="POST")
+      fieldset 
+        legend Task 
+        .w3-row-padding
+          .w3-third 
+            label Task
+            input.w3-input.w3-border(type="text", name="task")
+          .w3-third 
+            label Due Date 
+            input.w3-input.w3-border(type="date", name="date")
+          .w3-third 
+            label Who's doing it 
+            input.w3-input.w3-border(type="text", name="person")
+        label Description 
+        input.w3-input.w3-border(type="text", name="description")
+      button.w3-btn.w3-teal.w3-circle.w3-mb-2(type="submit") +
+  .w3-row-padding 
+    .w3-half 
+      .w3-class.w3-green 
+        header.w3-container.w3-lime 
+          h1 Pending Tasks
+        each t, index in pendingTasks
+          .w3-bar 
+            button.w3-bar-item.w3-button.w3-block.w3-left-align.w3-light-green.w3-xlarge(style="width: 77.5%", onclick="showInfo('Pending" + t.id + "')")= t.task
+            form(action="/delete_pending/" + t.id,  method="POST")
+              input(type="hidden" name="task_id" value=t.id)
+              button.w3-bar-item.w3-button.w3-block.w3-light-green.w3-xlarge(style="width: 7.5%", type='submit') 
+                i.fa.fa-trash
+            button.w3-bar-item.w3-button.w3-block.w3-light-green.w3-xlarge(style="width: 7.5%", type='submit', onclick='document.getElementById("Edit' + t.id + '").style.display="block"')
+              i(class="fa fa-refresh")
+            .w3-modal(id="'Edit" + t.id + "'")
+              .w3-modal-content 
+                .w3-container
+                  span.w3-button.w3-display-topright(onclick='document.getElementById("Edit' + t.id + '").style.display="none"')
+                    p Hello
+            form(action="/change_list/" + t.id, method="POST")
+              input(type="hidden" name="task_id" value=t.id)
+              button.w3-bar-item.w3-button.w3-block.w3-light-green.w3-xlarge(style="width: 7.5%", type='submit')
+                i(class="fa fa-arrow-right")
+            .w3-container.w3-hide(id="Pending" + t.id)
+              p #[b Due Date:] #{t.date}
+              p #[b To be done by:] #{t.person}
+              p #[b Description:] #{t.description}
+    .w3-half
+      .w3-class.w3-indigo
+        header.w3-container.w3-aqua
+          h1 Done Tasks
+        each d in doneTasks 
+          .w3-bar 
+            button.w3-bar-item.w3-button.w3-block.w3-left-align.w3-light-blue.w3-xlarge(style="width: 92.5%", onclick="showInfo('Done" + d.id + "')")= d.task
+            form(action="/delete_done/" + d.id,  method="POST")
+              input(type="hidden" name="task_id" value="#{d.id}")
+              button.w3-bar-item.w3-button.w3-block.w3-light-blue.w3-xlarge(style="width: 7.5%") 
+                .i(class="fa fa-trash")
+            .w3-container.w3-hide(id="Done" + d.id)
+              p #[b Due Date:] #{d.date}
+              p #[b Done by:] #{d.person}
+              p #[b Description:] #{d.description}
+  script.
+    function showInfo(id) {
+
+    console.log(id)
+    var x = document.getElementById(id);
+    if (x.className.indexOf("w3-show") == -1) {
+      x.className += " w3-show";
+    } else {
+      x.className = x.className.replace(" w3-show", "");
+    }
+    }
+
