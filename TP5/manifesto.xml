@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifesto>
+    <meta>
+        <título>TPC 5</título>
+        <data>2023-02-19</data>
+        <autor>
+            <nome>Jorge Miguel Silva Melo</nome>
+            <id>PG50507</id>
+            <gitlink>https://github.com/BatataDoc3/RPCW2023</gitlink>
+        </autor>
+        <uc>Representação e Processamento de Conhecimento na Web(RPCW)</uc>
+    </meta>
+    <resumo>
+        <p>O quinto TPC consistia novamente numa ToDo List com a framework e metodologia dada na aula</p>
+        <p>Para além do que foi feito no TPC anterior, também implementei a edição de tarefas pendentes e a atualização automática da página</p>
+    </resumo>
+    <resultados>
+        <resultado path="TPC/"> Utilizar npm start para inciar a aplicação</resultado>
+        <resultado path="TPC/tasks.json"> ficherio json com as listas pendentes e feitas (correr com o json-server)</resultado>
+    </resultados>
+</manifesto>

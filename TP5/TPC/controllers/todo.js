@@ -20,6 +20,20 @@ module.exports.getDone = () => {
         })
 }
 
+
+module.exports.addTask = t => {
+    console.dir(t)
+    return axios.post('http://localhost:3000/pending_tasks/', t)
+        .then(resp => {
+            console.log("success!")
+            return resp.data
+        })
+        .catch(erro => {
+            console.dir(erro)
+            return erro
+        })
+}
+
 module.exports.deletePending = id => {
     return axios.delete('http://localhost:3000/pending_tasks/' + id)
         .then(resp => {
@@ -49,6 +63,7 @@ module.exports.editTask = t => {
             return erro
         })
 }
+
 
 module.exports.moveTask = id => {
     return axios.get('http://localhost:3000/pending_tasks/' + id)

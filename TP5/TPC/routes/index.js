@@ -25,10 +25,22 @@ router.get('/', function(req, res, next) {
 
 });
 
+router.post('/', function(req, res, next) {
+	console.log("Hello")
+	ToDo.addTask(req.body)
+		.then( task => {
+			res.redirect("/")
+		})
+		.catch(erro => {
+			res.render('error', {error: erro})
+		})
+})
 
 router.post('/change_list/:idTask', function(req, res, next) {
 	ToDo.moveTask(req.params.idTask)
-		.then()
+		.then( task => {
+			res.redirect("/")
+		})
 		.catch(erro => {
 			res.render('error', {error: erro})
 		})
@@ -37,7 +49,9 @@ router.post('/change_list/:idTask', function(req, res, next) {
 router.post('/delete_pending/:idTask', function(req, res, next) {
 
 	ToDo.deletePending(req.params.idTask)
-		.then()
+		.then( task => {
+			res.redirect("/")
+		})
 		.catch(erro => {
 			res.render('error', {error: erro})
 		})
@@ -45,9 +59,22 @@ router.post('/delete_pending/:idTask', function(req, res, next) {
 
 router.post('/delete_done/:idTask', function(req, res, next) {
 	ToDo.deleteDone(req.params.idTask)
-		.then()
+		.then( task => {
+			res.redirect("/")
+		})
 		.catch(erro => {
 			res.render('error',  {error: erro})
+		})
+})
+
+router.post('/edit/:idTask', function(req, res, next) {
+	console.dir(req.body)
+	ToDo.editTask(req.body)
+		.then( task => {
+			res.redirect("/")
+		})
+		.catch(erro => {
+			res.render('error', {error: erro})
 		})
 })
 

@@ -32,13 +32,31 @@ block content
               input(type="hidden" name="task_id" value=t.id)
               button.w3-bar-item.w3-button.w3-block.w3-light-green.w3-xlarge(style="width: 7.5%", type='submit') 
                 i.fa.fa-trash
-            button.w3-bar-item.w3-button.w3-block.w3-light-green.w3-xlarge(style="width: 7.5%", type='submit', onclick='document.getElementById("Edit' + t.id + '").style.display="block"')
+            button.w3-bar-item.w3-button.w3-block.w3-light-green.w3-xlarge(style="width: 7.5%", type='submit', onclick="document.getElementById('Edit" + t.id + "').style.display='block'")
               i(class="fa fa-refresh")
-            .w3-modal(id="'Edit" + t.id + "'")
+            .w3-modal(id='Edit' + t.id)
               .w3-modal-content 
-                .w3-container
-                  span.w3-button.w3-display-topright(onclick='document.getElementById("Edit' + t.id + '").style.display="none"')
-                    p Hello
+                header.w3-container.w3-teal
+                  span.w3-button.w3-display-topright(onclick='document.getElementById("Edit' + t.id + '").style.display="none"') X
+                  h2 Change Task
+                .w3-container.w3-white
+                  form.w3-container(action="/edit/" + t.id, method="POST")
+                    fieldset 
+                      legend Task 
+                      .w3-row-padding
+                        .w3-third 
+                          label Task
+                          input.w3-input.w3-border(type="text", name="task", value=t.task)
+                        .w3-third 
+                          label Due Date 
+                          input.w3-input.w3-border(type="date", name="date", value=t.date)
+                        .w3-third 
+                          label Who's doing it 
+                          input.w3-input.w3-border(type="text", name="person", value=t.person)
+                      label Description 
+                      input.w3-input.w3-border(type="text", name="description", value=t.description)
+                      input(type="hidden", name="id", value=t.id)
+                    button.w3-btn.w3-teal.w3-mb-2(type="submit") Update
             form(action="/change_list/" + t.id, method="POST")
               input(type="hidden" name="task_id" value=t.id)
               button.w3-bar-item.w3-button.w3-block.w3-light-green.w3-xlarge(style="width: 7.5%", type='submit')
@@ -47,7 +65,7 @@ block content
               p #[b Due Date:] #{t.date}
               p #[b To be done by:] #{t.person}
               p #[b Description:] #{t.description}
-    .w3-half
+    .w3-half(id="Hello")
       .w3-class.w3-indigo
         header.w3-container.w3-aqua
           h1 Done Tasks
