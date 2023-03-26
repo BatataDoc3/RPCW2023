@@ -1,0 +1,124 @@
+extends layout
+
+block content
+  .w3-card-4
+    header.w3-container.w3-teal
+      h1 Person Information: #{a.nome}
+        
+    .w3-container
+        ul.w3-ul.w3-card-4.w3-pale-green
+            li 
+                .w3-row
+                    .w3-quarter.w3-left
+                        h2 #[b Nome]
+                        .w3-panel.w3-border.w3-sand 
+                            p #{a.nome}
+                    .w3-quarter.w3-left
+                        h2 #[b Idade]
+                        .w3-panel.w3-border.w3-sand
+                            p #{a.idade}
+                    .w3-quarter.w3-left
+                        h2 #[b Sexo] 
+                        .w3-panel.w3-border.w3-sand
+                            p #{a.sexo}
+                    .w3-quarter.w3-left
+                        h2 #[b BI]  
+                        .w3-panel.w3-border.w3-sand
+                            p #{a.BI}
+
+            li #[h2 #[b Morada]]
+                p  #[b Cidade:]  
+                    .w3-panel.w3-border.w3-sand
+                        p #{a.morada.cidade}
+                p  #[b Distrito:]
+                    .w3-panel.w3-border.w3-sand
+                        p #{a.morada.distrito}
+            li #[h2 #[b profissao]] 
+                .w3-panel.w3-border.w3-sand
+                    p #{a.profissao}
+            li #[h2 #[b partido político]] 
+                p #[b party_abbr:] 
+                    .w3-panel.w3-border.w3-sand
+                        p #{a.partido_politico.party_abbr}
+                p #[b party_name:]
+                    .w3-panel.w3-border.w3-sand
+                        p #{a.partido_politico.party_name}
+            li #[h2 #[b religiao:]] 
+                .w3-panel.w3-border.w3-sand
+                    p #{a.religiao}
+            li #[h2 #[b marca carro]] 
+                .w3-panel.w3-border.w3-sand
+                    p #{a.marca_carro}
+            li 
+                w3-button.w3-block.w3-left-align(onClick="myFunction('Desportos')")  #[h2 #[b Desportos]]
+                .w3-container.w3-hide(id="Desportos")
+                    each desporto in a.desportos
+                        .w3-panel.w3-border.w3-sand
+                            p #{desporto}
+            li 
+                w3-button.w3-block.w3-left-align(onClick="myFunction('Animais')")  #[h2 #[b Animais]]
+                .w3-container.w3-hide(id="Animais")
+                    each animal in a.animais
+                        .w3-panel.w3-border.w3-sand
+                            p #{animal}
+            li 
+                w3-button.w3-block.w3-left-align(onClick="myFunction('fppt')")  #[h2 #[b Figuras públicas]]
+                .w3-container.w3-hide(id="fppt")
+                    each figura in a.figura_publica_pt
+                        .w3-panel.w3-border.w3-sand
+                            p #{figura}
+            li 
+                w3-button.w3-block.w3-left-align(onClick="myFunction('Destinos')")  #[h2 #[b Destinos]]
+                .w3-container.w3-hide(id="Destinos")
+                    each destino in a.destinos_favoritos
+                        .w3-panel.w3-border.w3-sand
+                            p #{destino}
+            li 
+                w3-button.w3-block.w3-left-align(onClick="myFunction('Atributos')")  #[h2 #[b Atributos]]
+                .w3-container.w3-hide(id="Atributos")
+                    if a.atributos.fumador
+                        .w3-panel.w3-border.w3-sand
+                            p É fumador
+                    if a.atributos.gosta_cinema
+                        .w3-panel.w3-border.w3-sand
+                            p Gosta de cinema
+                    if a.atributos.gosta_viajar
+                        .w3-panel.w3-border.w3-sand
+                            p Gosta de viajar
+                    if a.atributos.acorda_cedo
+                        .w3-panel.w3-border.w3-sand
+                            p Acorda cedo                    
+                    if a.atributos.gosta_ler
+                        .w3-panel.w3-border.w3-sand
+                            p Gosta de ler
+                    if a.atributos.gosta_musica
+                        .w3-panel.w3-border.w3-sand
+                            p Gosta de música
+                    if a.atributos.gosta_comer
+                        .w3-panel.w3-border.w3-sand
+                            p Gosta de comer
+                    if a.atributos.gosta_animais_estimacao
+                        .w3-panel.w3-border.w3-sand
+                            p Gosta de animais de estimação
+                    if a.atributos.gosta_dancar
+                        .w3-panel.w3-border.w3-sand
+                            p Gosta de dançar
+                    b Comida favorita:
+                        .w3-panel.w3-border.w3-sand 
+                            p #{a.atributos.comida_favorita}
+
+            
+    script.
+        function myFunction(id) {
+        var x = document.getElementById(id);
+        if (x.className.indexOf("w3-show") == -1) {
+          x.className += " w3-show";
+        } else {
+          x.className = x.className.replace(" w3-show", "");
+        }
+        }
+    footer.w3-container.w3-teal 
+      h5 Generated by RPCW2023 in #{d} - #[a(href="/") Return]
+
+
+

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifesto>
+    <meta>
+        <título>TPC 6</título>
+        <data>2023-03-25</data>
+        <autor>
+            <nome>Jorge Miguel Silva Melo</nome>
+            <id>PG50507</id>
+            <gitlink>https://github.com/BatataDoc3/RPCW2023</gitlink>
+        </autor>
+        <uc>Representação e Processamento de Conhecimento na Web(RPCW)</uc>
+    </meta>
+    <resumo>
+        <p>O quinto TPC consistia, utlizando o mongoDB, fazer um site parecido ao criado com os alunos, mas desta vez com o dataset de pessoas, dataset esse mais complexo</p>
+    </resumo>
+    <resultados>
+        <resultado path="TPC/"> Utilizar npm start para inciar a aplicação</resultado>
+    </resultados>
+</manifesto>

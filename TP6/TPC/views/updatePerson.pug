@@ -1,0 +1,165 @@
+extends layout 
+block content 
+
+    script.
+        function addSport(){
+            document.getElementById(`sportButton`).remove()
+            document.getElementById(`more sports`).innerHTML = `<label>Desporto</label><input class="w3-input w3-round" type="text" name="desporto"><button class="w3-btn w3-purple w3-mb-2" type="button" onclick="addSport()" id="sportButton"> Adicionar Outro Desporto</button><div id="more sports">`
+            document.getElementById(`more sports`).setAttribute("id", "done")
+        }
+        function addAnimal(){
+            document.getElementById(`animalButton`).remove()
+            document.getElementById(`more animals`).innerHTML = `<label>Animal</label><input class="w3-input w3-round" type="text" name="animal"><button class="w3-btn w3-purple w3-mb-2" type="button" onclick="addAnimal()" id="animalButton"> Adicionar Outro Animal</button><div id="more animals">`
+            document.getElementById(`more animals`).setAttribute("id", "done")
+        }
+        function addFppt(){
+            document.getElementById(`fpptButton`).remove()
+            document.getElementById(`more fppt`).innerHTML = `<label>Figura</label><input class="w3-input w3-round" type="text" name="fppt"><button class="w3-btn w3-purple w3-mb-2" type="button" onclick="addFppt()" id="fpptButton"> Adicionar Outra Figura Pública</button><div id="more fppt">`
+            document.getElementById(`more fppt`).setAttribute("id", "done")
+        }
+        function addDestino(){
+            document.getElementById(`destinoButton`).remove()
+            document.getElementById(`more destinos`).innerHTML = `<label>Destino</label><input class="w3-input w3-round" type="text" name="destino"><button class="w3-btn w3-purple w3-mb-2" type="button" onclick="addDestino()" id="destinoButton"> Adicionar Outro Destino</button><div id="more destinos">`
+            document.getElementById(`more destinos`).setAttribute("id", "done")
+        }
+        function validateForm() {
+            var nome = document.forms["Form"]["nome"].value;
+            var idade = document.forms["Form"]["idade"].value;
+            var option = document.forms["Form"]["option"].value;
+            var cidade = document.forms["Form"]["cidade"].value;
+            var distrito = document.forms["Form"]["distrito"].value;
+            var profissao = document.forms["Form"]["profissao"].value;
+            var religiao = document.forms["Form"]["religiao"].value;
+            var marca = document.forms["Form"]["marca"].value;
+            var comida = document.forms["Form"]["comida"].value;
+            if ((nome == null || nome == "") && (idade == null || idade == "") && (option == null || option == "") && (cidade == null || cidade == "") &&
+            (profissao == null || profissao == "") &&(religiao == null || religiao == "") && (distrito == null || distrito == "") && (marca == null || marca == "") &&
+            (comida == null || comida == "")) {
+                alert("Please Fill In All the Fields");
+                return false;
+            }
+        }
+
+    .w3-card-4
+        header.w3-container.w3-purple
+            h2 Edit information
+        form.w3-container(name="Form" method="POST" onsubmit="return validateForm()")
+            fieldset
+                legend Informações Básicas
+                .w3-row-padding
+                    .w3-third.w3-left
+                        label Nome
+                        input.w3-input.w3-round(type="text" name="nome" value=a.nome)
+                    .w3-third.w3-left
+                        label Idade
+                        input.w3-input.w3-round(type="text" name="idade" value=a.idade)
+                    .w3-third.w3-left
+                        label Sexo 
+                        select.w3-select(name="sexo")
+                            option(value="", disabled selected) Escolhe uma opção
+                            option(value="masculino") Masculino
+                            option(value="feminino") Feminino
+                            option(value="outro") Outro
+            fieldset
+                legend Morada 
+                .w3-row-padding
+                    .w3-half.w3-left 
+                        label Cidade
+                        input.w3-input.w3-round(type="text" name="cidade" value=a.morada.cidade)
+                    .w3-half.w3-left
+                        label Distrito
+                        input.w3-input.w3-round(type="text" name="distrito" value=a.morada.distrito)
+            fieldset
+                legend Partido Político 
+                .w3-row-padding
+                    .w3-half.w3-left 
+                        label Abreviatura do partido
+                        input.w3-input.w3-round(type="text" name="party_abbr" value=a.partido_politico-party_abbr)
+                    .w3-half.w3-left
+                        label Nome do Partido
+                        input.w3-input.w3-round(type="text" name="party_name" value=a.partido_politico-party_name)
+            fieldset 
+                label CC
+                    legend 
+                        input.w3-input.w3-round(type="text" name="CC" value=a.cc)
+            fieldset 
+                label Profissão
+                    legend 
+                        input.w3-input.w3-round(type="text" name="profissao" value=a.profissao)
+            fieldset 
+                label Religião
+                    legend
+                        input.w3-input.w3-round(type="text" name="religiao" value=a.religiao)
+            
+            fieldset 
+                label Marca do carro
+                    legend
+                        input.w3-input.w3-round(type="text" name="marca" value=a.marca_carro)
+            fieldset 
+                each sport in a.desportos
+                    legend Desportos 
+                    input.w3-input.w3-round(type="text" name="desporto" value=sport)
+                button.w3-btn.w3-purple.w3-mb-2(id="sportButton" onclick='addSport()', type="button") Adicionar Outro Desporto
+                div(id="more sports")
+            fieldset 
+                each animal in a.animais
+                    legend Animais 
+                    input.w3-input.w3-round(type="text" name="animais" value=animal)
+                button.w3-btn.w3-purple.w3-mb-2(id="animalButton" onclick=`addAnimal()`, type="button") Adicionar Outro Animal
+                div(id="more animals")
+            fieldset 
+                each fppt in a.figura_publica_pt
+                    legend Figuras públicas pt 
+                    input.w3-input.w3-round(type="text" name="fppt" value=fppt)
+                button.w3-btn.w3-purple.w3-mb-2(id="fpptButton" onclick=`addFppt()`, type="button") Adicionar Outra Figura Pública
+                div(id="more fppt")
+            fieldset 
+                each destino in a.destinos_favoritos
+                    legend Destinos favoritos
+                    input.w3-input.w3-round(type="text" name="destinos" value=destino)
+                button.w3-btn.w3-purple.w3-mb-2(id="destinoButton" onclick=`addDestino()`, type="button") Adicionar Outro Destino
+                div(id="more destinos")
+            fieldset 
+                label Comida favorita
+                    input.w3-input.w3-round(type="text" name="comida" value=a.atributos.comida_favorita)
+
+                
+                
+            fieldset
+                label Atributos
+                    p
+                        input.w3-check(type="checkbox" name="fumador")
+                        label És fumador?
+                    p
+                        input.w3-check(type="checkbox" name="gosta_cinema")
+                        label Gostas de cinema?
+                    p
+                        input.w3-check(type="checkbox" name="gosta_viajar")
+                        label Gostas de viajar?
+                    p
+                        input.w3-check(type="checkbox" name="acorda_cedo")
+                        label Acordas cedo?
+                    p
+                        input.w3-check(type="checkbox" name="gosta_ler")
+                        label Gostas de ler?
+                    p
+                        input.w3-check(type="checkbox" name="gosta_musica")
+                        label Gostas de música?
+                    p
+                        input.w3-check(type="checkbox" name="gosta_comer")
+                        label Gostas de comer?
+                    p
+                        input.w3-check(type="checkbox" name="gosta_animais_estimacao")
+                        label Gostas de animais de estimação?
+                    p
+                        input.w3-check(type="checkbox" name="gosta_dancar")
+                        label Gostas de dançar?
+                        
+                    
+            button.w3-btn.w3-purple.w3-mb-2(type="submit") Add
+               
+        footer.w3-container.w3-purple
+            h5 Generated by EngWeb2023 in #{d} - [#[a(href="/") Return]]
+                
+            
+            </div>
